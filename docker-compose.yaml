@@ -1,0 +1,15 @@
+version: '2'
+services:
+
+  proxy:
+    build:
+      context: ./envoy
+      dockerfile: Dockerfile-min.proxy
+    volumes:
+      - ./envoy/envoy-min.yaml:/etc/envoy-min.yaml
+      - ./service-min/build/optimized.wasm:/etc/service-min.wasm
+    networks:
+      - envoymesh
+
+networks:
+  envoymesh: {}

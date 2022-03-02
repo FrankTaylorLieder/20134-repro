@@ -1,0 +1,14 @@
+bootstrap_extensions:
+- name: envoy.bootstrap.wasm
+  typed_config:
+    "@type": type.googleapis.com/envoy.extensions.wasm.v3.WasmService
+    singleton: true
+    config:
+      name: "SharedService"
+      root_id: "SharedService"
+      vm_config:
+        runtime: "envoy.wasm.runtime.wavm"
+        vm_id: "shared_service_vm"
+        code:
+          local:
+            filename: "/etc/service-min.wasm"
