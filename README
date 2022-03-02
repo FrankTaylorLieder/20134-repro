@@ -1,0 +1,15 @@
+Pre-reqs:
+
+  - node.js
+  - npm
+  - docker
+
+To run:
+
+  cd service-min
+  npm install && npm run asbuild
+  cd ..
+
+  docker-compose build
+  docker-compose up
+
